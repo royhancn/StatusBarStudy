@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import AppKit
 
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -26,9 +27,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // An object that manages an app’s menus.
         self.statusBarMenu = NSMenu()
-        self.statusBarMenu.addItem(withTitle: "Hello", action: nil, keyEquivalent: "")
+        self.statusBarMenu.addItem(withTitle: "Settings", action: #selector(openSettings), keyEquivalent: "")
 
         // Add menu to statusbar
         self.statusBarItem.menu = self.statusBarMenu
     }
+    
+    @objc func openSettings() {
+        // Get focus from other apps
+        NSApplication.shared.activate(ignoringOtherApps: true)
+
+        // Create the frame to draw window
+        let settings = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 640, height: 480),
+            styleMask: [.titled, .closable, .fullSizeContentView],
+            backing: .buffered,
+            defer: false
+        )
+        // Add title
+        settings.title = "Settings"
+
+        // Keeps window reference active, we need to use this when using NSHostingView
+        settings.isReleasedWhenClosed = false
+
+        // Lets us use SwiftUI viws with AppKit
+        settings.contentView = NSHostingView(rootView: SettingsView())
+
+        // Center and bring forward
+        settings.center()
+        settings.makeKeyAndOrderFront(nil)
+    }
+
 }
+

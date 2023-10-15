@@ -15,6 +15,7 @@
 		B097E3AC2ADBADB9004E8E89 /* StatusBarStudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B097E3AB2ADBADB9004E8E89 /* StatusBarStudyUITests.swift */; };
 		B097E3AE2ADBADB9004E8E89 /* StatusBarStudyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B097E3AD2ADBADB9004E8E89 /* StatusBarStudyUITestsLaunchTests.swift */; };
 		B097E3BB2ADBB188004E8E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B097E3BA2ADBB188004E8E89 /* AppDelegate.swift */; };
+		B097E3BD2ADBB605004E8E89 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B097E3BC2ADBB605004E8E89 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		B097E3AB2ADBADB9004E8E89 /* StatusBarStudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarStudyUITests.swift; sourceTree = "<group>"; };
 		B097E3AD2ADBADB9004E8E89 /* StatusBarStudyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarStudyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B097E3BA2ADBB188004E8E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B097E3BC2ADBB605004E8E89 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				B097E3982ADBADB9004E8E89 /* StatusBarStudy.entitlements */,
 				B097E3952ADBADB9004E8E89 /* Preview Content */,
 				B097E3BA2ADBB188004E8E89 /* AppDelegate.swift */,
+				B097E3BC2ADBB605004E8E89 /* SettingsView.swift */,
 			);
 			path = StatusBarStudy;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B097E3BB2ADBB188004E8E89 /* AppDelegate.swift in Sources */,
+				B097E3BD2ADBB605004E8E89 /* SettingsView.swift in Sources */,
 				B097E3922ADBADB7004E8E89 /* ContentView.swift in Sources */,
 				B097E3902ADBADB7004E8E89 /* StatusBarStudyApp.swift in Sources */,
 			);
