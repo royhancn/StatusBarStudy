@@ -20,10 +20,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Returns the system-wide status bar located in the menu bar.
         let statusBar = NSStatusBar.system
+        let statusBarView = AnyView(StatusBarView())
 
         // Returns a newly created status item that has been allotted a specified space within the status bar.
-        self.statusBarItem = statusBar.statusItem(withLength: NSStatusItem.squareLength)
-        self.statusBarItem.button?.image = NSImage(systemSymbolName: "star.fill", accessibilityDescription: "Status bar icon")
+        self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
+
+                if let button = self.statusBarItem.button {
+                    let view = NSHostingView(rootView: statusBarView)
+                    view.setFrameSize(NSSize(width: 57, height: NSStatusBar.system.thickness))
+                    
+                    button.subviews.forEach { $0.removeFromSuperview() }
+                    button.addSubview(view)
+                    self.statusBarItem.length = 57
+                }
 
         // An object that manages an app’s menus.
         self.statusBarMenu = NSMenu()
